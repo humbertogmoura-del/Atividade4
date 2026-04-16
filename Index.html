@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Categorias e Produtos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<h1>📦 Categorias e Produtos</h1>
+
+<!-- ========== BLOCO CATEGORIAS ========== -->
+<div class="bloco">
+    <h2>Categorias</h2>
+    <div id="listaCategorias">
+        <p>Carregando...</p>
+    </div>
+    <hr>
+    <h3>Nova Categoria</h3>
+    <input type="text" id="novaCategoria" placeholder="Nome da categoria">
+    <button onclick="inserirCategoria()">+ Inserir Categoria</button>
+</div>
+
+<!-- ========== MODAL EDITAR CATEGORIA ========== -->
+<div id="modalEditarCategoria" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cancelarEdicao()">&times;</span>
+        <h3>Editar Categoria</h3>
+        <input type="hidden" id="editarCategoriaId">
+        <input type="text" id="editarCategoriaNome" placeholder="Nome da categoria">
+        <div class="modal-buttons">
+            <button onclick="salvarEditarCategoria()">Salvar</button>
+            <button onclick="cancelarEdicao()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<!-- ========== BLOCO PRODUTOS ========== -->
+<div class="bloco">
+    <h2>Produtos</h2>
+    <div id="listaProdutos">
+        <p>Carregando...</p>
+    </div>
+    <hr>
+    <h3>Novo Produto</h3>
+    <input type="text" id="produtoNome" placeholder="Nome do produto">
+    <input type="number" id="produtoPreco" placeholder="Preço" min="0" step="0.01">
+    <select id="produtoCategoria"></select>
+    <button onclick="inserirProduto()">+ Inserir Produto</button>
+</div>
+
+<!-- ========== MODAL EDITAR PRODUTO ========== -->
+<div id="modalEditarProduto" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cancelarEdicao()">&times;</span>
+        <h3>Editar Produto</h3>
+        <input type="hidden" id="editarProdutoId">
+        <input type="text" id="editarProdutoNome" placeholder="Nome do produto">
+        <input type="number" id="editarProdutoPreco" placeholder="Preço" min="0" step="0.01">
+        <select id="editarProdutoCategoria"></select>
+        <div class="modal-buttons">
+            <button onclick="salvarEditarProduto()">Salvar</button>
+            <button onclick="cancelarEdicao()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Script Principal -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
